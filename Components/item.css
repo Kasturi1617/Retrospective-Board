@@ -1,0 +1,10 @@
+.image {
+    width: 40px;
+    height: 40px;
+    justify-content: flex-end;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+}
