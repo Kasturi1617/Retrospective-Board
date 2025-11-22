@@ -1,0 +1,33 @@
+.image {
+    width: 40px;
+    height: 40px;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+span {
+    font-family: "Lucida Console", "Courier New", monospace;
+    margin-bottom: 10px;
+}
+
+.add-button {
+    border-radius: 8px;
+    width: 25%;
+    background-color: #AEDEFC;
+}
+
+.add-button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}

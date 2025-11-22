@@ -1,13 +1,10 @@
-import "./item.css";
+import "./Item.css";
 
 function Item(props) {
     return (
         <div>
-            <div className="title">
-                <img className="image" src={props.imagePath}></img>
-                <h2>{props.title}</h2>
-            </div>
-            <button>{props.buttonTitle}</button>
+            <p>{props.text}</p>
+            <img className="add-emoji-icon" src="add-reaction-icon-md.png" />
         </div>
     )
 }
