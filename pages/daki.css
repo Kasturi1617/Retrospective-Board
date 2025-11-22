@@ -4,6 +4,8 @@
     flex-direction: row;
 }
 
-.column {
+.column-title {
     flex: 1;
+    background-color: #EEEEEE;
+    border-radius: 8px;
 }
