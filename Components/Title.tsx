@@ -18,7 +18,7 @@ function Item(props) {
             </div>
             <div className="body">
                 <span className="column-title">{props.columnTitle}</span>
-                <NewItem />
+                <NewItem title={props.title}/>
             </div>
         </div>
     )

@@ -2,17 +2,21 @@
     display: flex;
     flex-direction: column;
     transition: 150ms ease;
-    scale: 1.2;
+    transform-origin: center;
     margin-top: 20px;
+    overflow-x: hidden;
+    background-color: white;
 }
 
 .visibility-button {
     margin-bottom: 10px;
+    margin-left: 20px;
     border-radius: 8px;
     width: 40%;
     outline: none;
     background-color: white;
     border: none;
+    margin-top: 5px;
 }
 
 .dropdown-content {
@@ -27,18 +31,21 @@
 }
 
 .input-field {
-    height: 80px;
+    height: 50px;
     width: 80%;
     margin-bottom: 10px;
     border-radius: 8px;
+    margin-left: 20px;
 }
 
 .submit-button {
     border-radius: 8px;
     background-color: #8FABD4;
     width: 40%;
-    height: 40px;
+    height: 30px;
     margin-right: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .option-button {
@@ -61,4 +68,39 @@
     border-radius: 8px;
     width: 25%;
     background-color: #AEDEFC;
+    margin-left: 10px;
+}
+
+.Add {
+    border: 8px;
+    border: 1px solid #ccc;
+    border-left: 5px solid #3DB6B1;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.Keep {
+    border: 8px;
+    border: 1px solid #ccc;
+    border-left: 5px solid #B7A3E3;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.Drop {
+    border: 8px;
+    border: 1px solid #ccc;
+    border-left: 5px solid #2196F3;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.Improve {
+    display: flex;
+    flex-direction: column;
+    border: 8px;
+    border: 1px solid #ccc;
+    border-left: 8px solid #1A2A80;
+    border-radius: 8px;
+    margin-top: 10px;
 }
