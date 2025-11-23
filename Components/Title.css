@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+.title-text {
+    margin-left: 100px;
+}
+
 .body {
     display: flex;
     flex-direction: column;
@@ -30,4 +34,8 @@ span {
 
 .add-button:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+}
+
+.column-title {
+    margin-left: 10px;
 }

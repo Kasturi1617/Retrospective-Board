@@ -1,4 +1,86 @@
 .add-emoji-icon {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.text {
+    margin-left: 10px;
+}
+
+.item-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.vote {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-bottom: auto;
+    align-items: center;
+}
+
+.count-button {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    align-items: center;
+}
+
+.minus {
+    margin-right: 10px;
+}
+
+.count {
+    margin-right: 5px;
+}
+
+.comment {
+    width: 20px;
+    height: 20px;
+    margin-left: 250px;
+    align-items: center;
+}
+
+.item-container {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.add-container {
+    border: 8px;
+    border: 1px solid #ccc;
+    border-left: 8px solid #3DB6B1;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.keep-container {
+    border: 8px;
+    border: 1px solid #ccc;
+    border-left: 8px solid #B7A3E3;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.improve-container {
+    border: 8px;
+    border: 1px solid #ccc;
+    border-left: 8px solid #1A2A80;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.drop-container {
+    border: 1px solid #ccc;
+    border-left: 8px solid #2196F3;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
