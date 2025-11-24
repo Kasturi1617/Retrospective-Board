@@ -21,7 +21,7 @@ function Comments(props) {
     }
 
     function handleCancel() {
-        setShowBox(false);
+        setShowComment(false);
     }
 
     return <>
