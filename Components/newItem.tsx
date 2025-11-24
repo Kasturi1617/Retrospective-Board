@@ -34,23 +34,43 @@ function NewItem(props) {
     function handleSubmit(event) {
         event?.preventDefault();
 
-        if(inputValue === "") return;
+        if (inputValue === "") return;
 
-        if(props.title === "Drop")
-        {
-            setDrop([...drop, inputValue]);
+        if (props.title === "Drop") {
+            const newItem = {
+                text: inputValue,
+                username: "",
+                comments: [],
+                reactions: [],
+            };
+            setDrop([...drop, newItem]);
         }
-        else if(props.title === "Add")
-        {
-            setAdd([...add, inputValue]); 
+        else if (props.title === "Add") {
+            const newItem = {
+                text: inputValue,
+                username: "",
+                comments: [],
+                reactions: [],
+            };
+            setAdd([...add, newItem]);
         }
-        else if(props.title === "Keep")
-        {
-            setKeep([...keep, inputValue]); 
+        else if (props.title === "Keep") {
+            const newItem = {
+                text: inputValue,
+                username: "",
+                comments: [],
+                reactions: [],
+            };
+            setKeep([...keep, newItem]);
         }
-        else if(props.title === "Improve")
-        {
-            setImprove([...improve, inputValue]); 
+        else if (props.title === "Improve") {
+            const newItem = {
+                text: inputValue,
+                username: "",
+                comments: [],
+                reactions: [],
+            };
+            setImprove([...improve, newItem]);
         }
         setInputValue("");
     }

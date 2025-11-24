@@ -17,7 +17,7 @@ function DAKI() {
                     <div className="drop">
                         {
                             drop.map((el, idx) => (
-                                <Item key={idx} text={el} title="drop"/>
+                                <Item key={idx} index={idx} text={el.text} title="drop"/>
                             ))
                         }
                     </div>
@@ -28,7 +28,7 @@ function DAKI() {
                     <div className="add">
                         {
                             add.map((el, idx) => (
-                                <Item key={idx} text={el} title="add"/>
+                                <Item key={idx} index={idx} text={el.text} title="add"/>
                             ))
                         }
                     </div>
@@ -39,7 +39,7 @@ function DAKI() {
                     <div className="keep">
                         {
                             keep.map((el, idx) => (
-                                <Item key={idx} text={el} title="keep"/>
+                                <Item key={idx} index={idx} text={el.text} title="keep"/>
                             ))
                         }
                     </div>
@@ -50,7 +50,7 @@ function DAKI() {
                     <div className="improve">
                         {
                             improve.map((el, idx) => (
-                                <Item key={idx} text={el} title="improve"/>
+                                <Item key={idx} index={idx} text={el.text} title="improve"/>
                             ))
                         }
                     </div>
