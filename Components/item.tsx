@@ -1,6 +1,6 @@
 import { Comme } from "next/font/google";
 import "./Item.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Comments from "./Comment";
 import Emoji from "./Emoji";
 import { useAppStore } from "../Store/useAppStore";
@@ -37,9 +37,9 @@ function Item(props) {
                 <p className="text">{props.text}</p>
                 <div className="item-bottom">
 
-                {drop[props.index].reactions.map(([username, reaction], idx)=> {
-                    return <button className="added-emoji">{reaction}</button>
-                })}
+                    {drop[props.index].reactions.map(([username, reaction], idx) => {
+                        return <button className="added-emoji">{reaction}</button>
+                    })}
                     <img className="add-emoji-icon" src="add-reaction-icon-md.png" onClick={handleEmojiClick} />
                     <img src="speech-bubble.png" onClick={handleComment} className="comment"></img>
                     <div className="vote">
@@ -50,7 +50,7 @@ function Item(props) {
                 </div>
                 <div>
                     <div>
-                        {showEmoji && <Emoji id={props.index} index={props.index} title={props.title} />}
+                        {showEmoji && <Emoji id={props.index} index={props.index} title={props.title} onSelect={()=> setShowEmoji(false)}/>}
                     </div>
                 </div>
                 {showComment &&

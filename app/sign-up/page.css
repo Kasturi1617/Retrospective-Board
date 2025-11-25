@@ -1,0 +1,42 @@
+.main-container {
+    position: fixed;
+    background-color: #CBF3BB;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.title-text {
+    font-size: 80px;
+    color: #016B61;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.description {
+    font-size: 50px;
+    text-align: center;
+    color: #3A6F43;
+}
+
+.sign-in-button {
+    justify-content: center;
+    text-align: center;
+}
