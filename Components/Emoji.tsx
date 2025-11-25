@@ -14,9 +14,9 @@ function Emoji(props) {
     function handleEmojiClick(event) {
         setShowAllEmojis(false);
         const emoji = event.target.textContent;
+        props.onSelect();
         if (props.title === "drop") {
             addReactionToDrop(props.index, "Kasturi", emoji);
-            console.log("reactions =", drop[props.index].reactions);
         }
     }
 
