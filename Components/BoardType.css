@@ -55,3 +55,21 @@ p {
     flex: 1 1 0%;
     border-width: 2px;
 }
+
+.selected {
+    background-color: rgb(34, 34, 34);
+    scroll-snap-align: center;
+    height: inherit;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    color: rgb(123, 81, 209);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-style: solid;
+    border-image: initial;
+    overflow: hidden;
+    border-radius: 20px;
+    flex: 1 1 0%;
+    border-width: 2px;
+    border-color: rgb(123, 81, 209);
+}

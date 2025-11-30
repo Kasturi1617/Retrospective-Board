@@ -17,7 +17,7 @@ function SignInButton() {
     return (
         <div className="google-btn">
             <img className="google-logo" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo"></img>
-            <button className="sign-in-google" onClick={() => signIn("google", { callbackUrl: "/daki"})}>
+            <button className="sign-in-google" onClick={() => signIn("google", { callbackUrl: "/create"})}>
                 Sign in with Google
             </button>
         </div>
