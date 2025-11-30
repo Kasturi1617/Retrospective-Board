@@ -1,9 +1,14 @@
 import "./BoardType.css";
 
 function BoardType(props) {
+    function handleClick()
+    {
+        props.onBoardClick();
+    }
+
     return (
         <>
-            <div className="board-type">
+            <div className={`board-type ${props.isSelected ? "selected" : "board-type"}`} onClick={handleClick}>
                 <img className="boardtype-img" src={props.imgSrc}></img>
                 <div className="boardtype-top">
                     <div className="boardtype-title">

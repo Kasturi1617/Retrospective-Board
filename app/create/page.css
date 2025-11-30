@@ -38,3 +38,24 @@
     margin-left: 150px;
     margin-right: 150px;
 }
+
+.create-page-next {
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    margin-top: 30px;
+}
+
+.create-page-next button {
+    border-radius: 10px;
+    background-color: rgb(123, 81, 209);
+    height: 3rem;
+    margin-right: 160px;
+    color: white;
+    max-width: 12rem;
+    width: 100%;
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.75;
+}
