@@ -1,12 +1,12 @@
 .create-body {
     background-color: rgb(17, 17, 17);
-    margin-top: 100px;
-    /* width: 100%;
-    height: 100%;
-     */
-    /* top: 0;
-    left: 0;
-    position: fixed; */
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    /* leave space for header if header is ~80px tall */
+    margin-top: 70px;
+    /* same value as header height */
+    position: relative;
+    ;
 }
 
 .create-icon {
