@@ -1,13 +1,24 @@
 "use client"
 import BoardType from "@/Components/BoardType";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 import "./page.css";
 import SelectTemplate from "@/Components/SelectTemplate";
 
 function Retro() {
 
+    const { data: session } = useSession();
+
     const [selected, setSelected] = useState("");
     const [showTemplate, setShowTemplate] = useState(false);
+    if (!session) {
+        return(
+        <>
+            <div>
+                <h1>Not logged in</h1>
+            </div>
+        </>);
+    }
 
     function handleNextClick() {
         setShowTemplate(true);
@@ -65,7 +76,7 @@ function Retro() {
                 </div>
             }
 
-            {showTemplate && <SelectTemplate/>}
+            {showTemplate && <SelectTemplate />}
 
         </>);
 }
