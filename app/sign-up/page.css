@@ -1,6 +1,8 @@
 .main-container {
     position: fixed;
-    background-color: #CBF3BB;
+    background-color: #FAF3E1;
+    min-height: calc(100vh - 80px);
+    margin-top: 70px;
     height: 100%;
     top: 0;
     left: 0;

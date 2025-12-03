@@ -34,3 +34,90 @@
     color: white;
     font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
 }
+
+.header-dropdown {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    z-index: 1;
+    position: absolute;
+    right: 70px;
+    z-index: 2000;
+    top: 35px;
+    width: 200px;
+    background-color: rgb(34, 34, 34);
+    border-radius: 8px;
+}
+
+.header-dropdown button {
+    background: none;
+    border: none;
+    color: rgb(34, 34, 34);
+    text-align: left;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 17px;
+    background-color: rgb(34, 34, 34);
+    color: white;
+    line-height: 1.6;
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+.dark-mode-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    /* reduced width */
+    height: 20px;
+    /* reduced height */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    /* -4px from slider height */
+    width: 16px;
+    /* must match height for circle */
+    left: 2px;
+    /* small margin */
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+    /* = slider width - circle width - margin */
+}
