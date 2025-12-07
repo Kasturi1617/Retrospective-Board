@@ -12,7 +12,9 @@ const TEMPLATES = [
         "Start-Stop-Continue-Change",
         "4L's - Liked, Learned, Lacked, Longed For",
         "KALM - Keep, Add, Less, More",
-        "DAKI - Drop, Add, Keep, Improve"
+        "DAKI - Drop, Add, Keep, Improve",
+        "Lean Coffee - Democratic Discussions",
+        "Six Thinking Hats - Diverse Perspectives"
     ],
     [
         "Agile Thanksgiving",
@@ -94,6 +96,13 @@ const TEMPLATE_DETAILS = [[
     ["🔵 Blue Hat", "Big picture overview"]
 ]
 ]
+
+// const COLUMN_NAMES=[
+//     ["Start", "Stop", "Continue"],
+//     ["Glad", "Sad", "Mad"],
+//     ["Wind", "Anchors", "Actions"],
+//     [""]
+// ]
 
 function currentDate() {
   const formattedDate = new Date().toLocaleDateString("en-US", {

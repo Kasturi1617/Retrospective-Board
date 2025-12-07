@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { TEMPLATE_DETAILS, currentDate } from "../app/utils/utils";
 import "./CreateRetro.css";
+import Column from "./Column";
 
 function CreateRetro(props) {
 
     const [name, setName] = useState(currentDate());
+    const [showEdit, setShowEdit] = useState(false);
 
     function handleChange(event) {
         const value = event?.target.value;
@@ -16,7 +18,13 @@ function CreateRetro(props) {
         props.back();
     }
 
+    function handleEdit()
+    {
+        setShowEdit(true);
+    }
+
     return (<>
+    {!showEdit &&
         <div className="create-retro-main">
             <div className="create-retro-title">
                 <button onClick={handleBackClick}>{'<'}</button>
@@ -31,19 +39,24 @@ function CreateRetro(props) {
                 </fieldset>
                 <p>Retro Template</p>
                 {TEMPLATE_DETAILS[props.index].map((item, idx) => (
-                    <ul>
+                    <ul key={idx}>
                         <li>{item[0]}</li>
                         <span>{item[1]}</span>
                     </ul>
                 ))}
 
                 <div className="create-retro-edit-change-buttons">
-                    <button className="edit-button">✏️ Edit Template</button>
+                    <button className="edit-button" onClick={handleEdit}>✏️ Edit Template</button>
                     <button className="change-button">🔄️ Change Template</button>
                 </div>
                 <button className="create-retro-button">Create Retro</button>
             </div>
-        </div></>)
+        </div>}
+
+        {showEdit && <Column idx={props.index}/>}
+        </>
+        
+        )
 
 }
 

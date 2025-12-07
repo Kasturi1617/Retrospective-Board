@@ -71,14 +71,14 @@ function SelectTemplate() {
                         <div className="template-category">
                             {
                                 CATEGORY.map((item, idx) => (
-                                    <button onClick={handlleTemplateClick} value={idx}>{item}</button>
+                                    <button onClick={handlleTemplateClick} value={idx} key={idx}>{item}</button>
                                 ))
                             }
                         </div>
                         <div className="template-list">
                             {
                                 TEMPLATES[selectedTemplate].map((item, index) => (
-                                    <button onClick={handleTypeClick} value={index}>{item}</button>
+                                    <button onClick={handleTypeClick} value={index} key={index}>{item}</button>
                                 ))
                             }
                         </div>
