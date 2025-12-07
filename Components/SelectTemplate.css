@@ -156,6 +156,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 30px;
+    overflow-y: scroll;
 }
 
 .template-list button {
@@ -165,18 +166,16 @@
     width: 10rem;
     height: 3rem;
     margin-bottom: 10px;
-    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    font-weight: 500;
     color: white;
     font-size: 15px;
     background-color: #222;
     display: flex;
-    /* -webkit-box-flex: 1; */
     flex-grow: 1;
     width: auto;
     justify-content: flex-start;
-    /* -webkit-box-align: center; */
     align-items: center;
-    /* position: relative; */
     min-width: 0px;
     box-sizing: border-box;
     text-align: left;
@@ -197,15 +196,57 @@
 .all-templates {
     display: flex;
     flex-direction: row;
+    height: 350px;
     /* margin-right: 100px; */
 }
 
 .template-popup {
     background-color: rgb(17, 17, 17);
     /* visibility: hidden; */
+    min-height: calc(100vh - 70px);
+    /* leave space for header if header is ~80px tall */
+    padding-top: 90px;
+    /* margin-left: 20px; */
+    position: relative;
     z-index: 1;
+    left: 0;
+    position: absolute;
+    width: 100%;
 }
 
 .template-popup h2 {
     color: white;
+    line-height: 1.4;
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    margin-left: 50px;
+}
+
+.template-popup p {
+    line-height: 1.6;
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.select-template {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.select-template button {
+    border-radius: 10px;
+    background-color: rgb(123, 81, 209);
+    height: 3rem;
+    margin-right: 130px;
+    color: white;
+    /* max-width: 12rem; */
+    width: 300px;
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-top: 120px;
+    text-transform: uppercase;
 }

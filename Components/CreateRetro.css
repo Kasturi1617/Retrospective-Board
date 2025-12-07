@@ -1,0 +1,194 @@
+.create-retro-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 25px;
+    margin-left: 20px;
+}
+
+.create-retro-title {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.create-retro-main {
+    background-color: rgb(17, 17, 17);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    overflow-y: scroll;
+}
+
+.create-retro-title button {
+    background-color: inherit;
+    border: none;
+    color: white;
+    font-size: 30px;
+}
+
+.create-retro-input {
+    border-radius: 8px;
+    flex: 1;
+    /* justify-content: flex-start; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(232, 237, 239);
+    scroll-snap-align: center;
+    height: inherit;
+    cursor: pointer;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.12);
+    border-image: initial;
+    overflow: hidden;
+    border-radius: 20px;
+    flex: 1 1 0%;
+    border-width: 2px;
+    width: 40rem;
+    height: auto;
+    /* align-items: center;
+    justify-content: center; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.create-retro-fieldset {
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-style: solid;
+    border-color: #ffffff1f;
+    border-image: initial;
+    overflow: hidden;
+    border-radius: 20px;
+    border-width: 2px;
+    width: 30rem;
+    height: 5rem;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    margin-top: 50px;
+}
+
+.create-retro-fieldset input {
+    background-color: inherit;
+    border: none;
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentcolor;
+    border: 0px;
+    outline: none;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+    padding: 16.5px 14px;
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+}
+
+.create-retro-input p {
+    margin-left: 30px;
+    align-self: flex-start;
+    line-height: 1.6;
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.create-retro-input ul {
+    align-self: flex-start;
+}
+
+.create-retro-input li {
+    align-self: flex-start;
+    line-height: 1.3;
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.create-retro-edit-change-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.create-retro-edit-change-buttons button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    vertical-align: middle;
+    /* appearance: none; */
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.75;
+    /* min-width: 64px; */
+    color: var(--variant-outlinedColor);
+    width: 100%;
+    background-color: rgb(34, 34, 34);
+    text-transform: none;
+    padding: 5px 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    border-color: var(--variant-outlinedBorder, currentColor);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.change-button {
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.edit-button {
+    margin-left: 25px;
+    margin-right: 20px;
+}
+
+.create-retro-button {
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: Poppins, "Poppins Fallback", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.75;
+    min-width: 64px;
+    background-color: var(--variant-containedBg);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+    background-color: #7B51D1;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 10px;
+    width: 90%;
+    color: white;
+    margin-bottom: 30px;
+}

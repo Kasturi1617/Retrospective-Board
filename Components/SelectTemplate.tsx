@@ -1,6 +1,8 @@
 import "./SelectTemplate.css";
 import { useState } from "react";
 import { CATEGORY, TEMPLATES } from "../app/utils/utils";
+import CreateRetro from "./CreateRetro";
+
 
 
 function SelectTemplate() {
@@ -8,6 +10,8 @@ function SelectTemplate() {
     const [name, setName] = useState("");
     const [showOption, setShowOption] = useState(false);
     const [selectedTemplate, setSelectedTemplate] = useState(0);
+    const [templateType, setTemplateType] = useState(0);
+    const [showCreateScreen, setShowCreateScreen] = useState(false);
 
     function handleSelectClick() {
         setShowOption(true);
@@ -23,9 +27,27 @@ function SelectTemplate() {
         setSelectedTemplate(val);
     }
 
+    function handleTypeClick(event)
+    {
+        const val = event.target.value;
+        setTemplateType(val);
+    }
+
+    function handleSelect()
+    {
+        setShowCreateScreen(true);
+        setShowOption(false);
+    }
+
+    function back()
+    {
+        setShowCreateScreen(false);
+        setShowOption(true);
+    }
+
     return (
         <>
-            {!showOption &&
+            {!showCreateScreen && !showOption &&
                 <div className="select-main">
                     <div className="select-title">
                         <img className="select-icon" src="select.png"></img>
@@ -41,7 +63,7 @@ function SelectTemplate() {
                     </div>
                 </div>}
 
-            {showOption &&
+            {!showCreateScreen && showOption &&
                 <div className="template-popup">
                     <h2>Retrospective Templates</h2>
                     <p>Choose a template to start your retrospective</p>
@@ -56,12 +78,17 @@ function SelectTemplate() {
                         <div className="template-list">
                             {
                                 TEMPLATES[selectedTemplate].map((item, index) => (
-                                    <button>{item}</button>
+                                    <button onClick={handleTypeClick} value={index}>{item}</button>
                                 ))
                             }
                         </div>
                     </div>
+                    <div className="select-template">
+                        <button onClick={handleSelect}>✅ Select Template</button>
+                    </div>
                 </div>}
+
+                {showCreateScreen && <CreateRetro back={back} index={templateType}/>}
         </>
     )
 }
