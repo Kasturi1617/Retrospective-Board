@@ -27,20 +27,17 @@ function SelectTemplate() {
         setSelectedTemplate(val);
     }
 
-    function handleTypeClick(event)
-    {
+    function handleTypeClick(event) {
         const val = event.target.value;
         setTemplateType(val);
     }
 
-    function handleSelect()
-    {
+    function handleSelect() {
         setShowCreateScreen(true);
         setShowOption(false);
     }
 
-    function back()
-    {
+    function back() {
         setShowCreateScreen(false);
         setShowOption(true);
     }
@@ -88,7 +85,10 @@ function SelectTemplate() {
                     </div>
                 </div>}
 
-                {showCreateScreen && <CreateRetro back={back} index={templateType}/>}
+            {showCreateScreen &&
+                <div className="create-window">
+                    <CreateRetro back={back} index={templateType} />
+                </div>}
         </>
     )
 }
