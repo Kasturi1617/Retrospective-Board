@@ -9,13 +9,14 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
+    overflow-x: scroll;
 }
 
 .column-item-main {
     display: flex;
     flex-direction: column;
     flex: 1;
-    width: 200px;
+    width: 300px;
     /* height: 50px; */
     border-radius: 12px;
     box-sizing: border-box;
@@ -40,7 +41,7 @@
     cursor: text;
     display: inline-flex;
     /* align-items: center; */
-    width: 100%;
+    /* width: 100%; */
     position: relative;
     background-color: rgb(34, 34, 34);
     border-radius: 10px;
@@ -56,13 +57,10 @@
     min-width: 0px;
     width: 100%;
     padding: 8.5px 14px;
-    /* border: 8px; */
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-left: 8px solid #3DB6B1;
     border-radius: 8px;
-    /* border-width: 1px; */
     border-style: solid;
-    /* border-color:  */
     border-image: initial;
     align-self: flex-start;
     margin-left: 10px;
@@ -84,6 +82,24 @@
 
 .column-title input {
     margin-top: 20px;
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentcolor;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    min-width: 0px;
+    width: 100%;
+    padding: 8.5px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    /* border-left: 8px solid #3DB6B1; */
+    border-radius: 8px;
+    border-style: solid;
+    border-image: initial;
+    align-self: flex-start;
+    margin-left: 10px;
+    margin-right: 50px;
+    margin-bottom: 20px;
 }
 
 .column-delete {
@@ -113,7 +129,7 @@
     width: 32px;
     height: 32px;
     border-radius: 5px;
-    background-color: blue;
+    /* background-color: blue; */
     top: 0;
     left: 0;
     position: absolute;

@@ -115,5 +115,7 @@ function currentDate() {
   return formattedDate;
 }
 
+const COLORS=["rgb(3, 169, 244)", "rgb(238, 44, 29)", "rgb(255, 152, 0)", "rgb(0, 147, 6)", "rgb(32, 61, 229)"]
 
-export { CATEGORY, TEMPLATES, TEMPLATE_DETAILS, currentDate };
+
+export { CATEGORY, TEMPLATES, TEMPLATE_DETAILS, currentDate, COLORS };

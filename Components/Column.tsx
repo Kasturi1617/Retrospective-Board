@@ -1,40 +1,60 @@
 import "./Column.css";
-import { TEMPLATE_DETAILS } from "../app/utils/utils";
+import { TEMPLATE_DETAILS, COLORS } from "../app/utils/utils";
+import { useState } from "react";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
 function Column(props) {
+    const [items, setItems] = useState(TEMPLATE_DETAILS[props.idx]);
 
-    function handleTitleChange() {
-
-    }
-
-    function handleDescChange() {
-
+    function onDragEnd(result) {
+        if (!result.destination) return;
+        const reordered = [...items];
+        const [removed] = reordered.splice(result.source.index, 1);
+        reordered.splice(result.destination.index, 0, removed);
+        setItems(reordered);
     }
 
     return (
-        <>
+        <DragDropContext onDragEnd={onDragEnd}>
+            <Droppable droppableId="column">
+                {(provided) => (
+                    <div className="column-main" ref={provided.innerRef} {...provided.droppableProps}>
+                        {items.map((item, index) => (
+                            <Draggable key={index} draggableId={String(index)} index={index}>
+                                {(provided) => (
+                                    <div
+                                        className="column-item-main"
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                    >
+                                        <div className="column-title">
+                                            <input value={item[0]} style={{ borderLeft: `8px solid ${COLORS[index]}` }} />
+                                            <img
+                                                src="drag (1).png"
+                                                {...provided.dragHandleProps}
+                                            />
+                                        </div>
 
-            <div className="column-main">
-                {
-                    TEMPLATE_DETAILS[props.idx].map((item, index) => (
-                        <div className="column-item-main">
-                            <div className="column-title">
-                                <input value={item[0]} onChange={handleTitleChange}></input>
-                                <img src="drag (1).png"></img>
-                            </div>
-                            <input value={item[1]} onChange={handleDescChange}></input>
-                            <div className="column-color-container">
-                                <div className="column-color"></div>
-                            </div>
-                            <div></div>
-                            <div className="column-delete">
-                                <img src="trash.png"></img>
-                                <button>Delete</button>
-                            </div>
-                        </div>))
-                }
-            </div></>
-    )
+                                        <input value={item[1]} style={{ borderLeft: `8px solid ${COLORS[index]}` }} />
+
+                                        <div className="column-color-container" style={{ borderLeft: `8px solid ${COLORS[index]}` }}>
+                                            <div className="column-color" style={{ backgroundColor: COLORS[index] }}></div>
+                                        </div>
+
+                                        <div className="column-delete">
+                                            <img src="trash.png"></img>
+                                            <button>Delete</button>
+                                        </div>
+                                    </div>
+                                )}
+                            </Draggable>
+                        ))}
+                        {provided.placeholder}
+                    </div>
+                )}
+            </Droppable>
+        </DragDropContext>
+    );
 }
 
 export default Column;
