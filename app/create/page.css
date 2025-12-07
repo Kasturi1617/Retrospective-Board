@@ -5,8 +5,10 @@
     /* leave space for header if header is ~80px tall */
     margin-top: 70px;
     /* same value as header height */
-    position: relative;
-    ;
+    /* position: relative; */
+    position: absolute;
+    width: 100%;
+    left: 0;
 }
 
 .create-icon {
