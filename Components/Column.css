@@ -156,3 +156,41 @@
     width: 100%;
     margin-left: 10px;
 }
+
+.all-colors-container {
+    display: grid;
+    grid-template-columns: repeat(4, 32px);
+    /* 4 colors per row */
+    gap: 16px;
+    /* space between colors */
+    width: 100%;
+    padding: 12px;
+    margin-left: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+
+/* .edit-color {
+    margin-right: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    /* position: absolute; */
+
+
+/* margin-left: 15px;
+    margin-top: 4px; */
+
+
+/* } */
+
+.edit-color {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    cursor: pointer;
+}

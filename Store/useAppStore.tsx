@@ -40,17 +40,6 @@ export const useAppStore = create<AppStore>((set) => ({
   improve: [],
   setImprove: (value) => set({ improve: value }),
 
-  // addReactionToDrop: (idx, username, reaction) =>
-  //   set((state) => ({
-  //     drop: state.drop.map((item, i) =>
-  //       i === idx
-  //         ? {
-  //             ...item,
-  //             reactions: [...item.reactions, [username, reaction]],
-  //           }
-  //         : item
-  //     )
-  //   })),
   addReactionToDrop: (itemIndex, username, emoji) =>
   set((state) => {
     const updated = [...state.drop];

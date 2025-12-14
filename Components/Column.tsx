@@ -5,6 +5,7 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
 function Column(props) {
     const [items, setItems] = useState(TEMPLATE_DETAILS[props.idx]);
+    const [showColors, setShowColors] = useState(false);
 
     function onDragEnd(result) {
         if (!result.destination) return;
@@ -12,6 +13,19 @@ function Column(props) {
         const [removed] = reordered.splice(result.source.index, 1);
         reordered.splice(result.destination.index, 0, removed);
         setItems(reordered);
+    }
+
+    function handleColorChange() {
+        setShowColors(!showColors);
+    }
+
+    function handleColourChoose(itemIndex, item, colorIndex) {
+        console.log("Clicked Kasturi");
+        console.log(item);
+        console.log(COLORS[colorIndex]);
+        item[2] = COLORS[colorIndex];
+        // setItems(item);
+        handleColorChange();
     }
 
     return (
@@ -28,18 +42,27 @@ function Column(props) {
                                         {...provided.draggableProps}
                                     >
                                         <div className="column-title">
-                                            <input value={item[0]} style={{ borderLeft: `8px solid ${COLORS[index]}` }} />
+                                            <input value={item[0]} style={{ borderLeft: `8px solid ${item[2]}` }} />
                                             <img
                                                 src="drag (1).png"
                                                 {...provided.dragHandleProps}
                                             />
                                         </div>
 
-                                        <input value={item[1]} style={{ borderLeft: `8px solid ${COLORS[index]}` }} />
+                                        <input value={item[1]} style={{ borderLeft: `8px solid ${item[2]}` }} />
 
-                                        <div className="column-color-container" style={{ borderLeft: `8px solid ${COLORS[index]}` }}>
-                                            <div className="column-color" style={{ backgroundColor: COLORS[index] }}></div>
+                                        <div className="column-color-container" style={{ borderLeft: `8px solid ${item[2]}` }}>
+                                            <div className="column-color" onClick={handleColorChange} style={{ backgroundColor: item[2] }}></div>
                                         </div>
+
+                                        {showColors &&
+                                            <div className="all-colors-container">
+                                                {
+                                                    COLORS.map((color, colorIdx) => (
+                                                        <div className="edit-color" key={colorIdx} style={{ backgroundColor: color }} onClick={() => handleColourChoose(index, item, colorIdx)}></div>
+                                                    ))
+                                                }
+                                            </div>}
 
                                         <div className="column-delete">
                                             <img src="trash.png"></img>
