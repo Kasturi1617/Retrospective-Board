@@ -5,6 +5,8 @@ import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
 function Column(props) {
     const [items, setItems] = useState(TEMPLATE_DETAILS[props.idx]);
+    const [activeColorIndex, setActiveColorIndex] = useState<number | null>(null);
+
     const [showColors, setShowColors] = useState(false);
 
     function onDragEnd(result) {
@@ -15,17 +17,20 @@ function Column(props) {
         setItems(reordered);
     }
 
-    function handleColorChange() {
-        setShowColors(!showColors);
+    function handleColorChange(index) {
+        if (showColors === false) {
+            setShowColors(true);
+            setActiveColorIndex(index);
+        }
+        else {
+            setShowColors(false);
+            setActiveColorIndex(null);
+        }
     }
 
     function handleColourChoose(itemIndex, item, colorIndex) {
-        console.log("Clicked Kasturi");
-        console.log(item);
-        console.log(COLORS[colorIndex]);
         item[2] = COLORS[colorIndex];
-        // setItems(item);
-        handleColorChange();
+        handleColorChange(itemIndex);
     }
 
     return (
@@ -52,10 +57,10 @@ function Column(props) {
                                         <input value={item[1]} style={{ borderLeft: `8px solid ${item[2]}` }} />
 
                                         <div className="column-color-container" style={{ borderLeft: `8px solid ${item[2]}` }}>
-                                            <div className="column-color" onClick={handleColorChange} style={{ backgroundColor: item[2] }}></div>
+                                            <div className="column-color" onClick={() => handleColorChange(index)} style={{ backgroundColor: item[2] }}></div>
                                         </div>
 
-                                        {showColors &&
+                                        {activeColorIndex === index &&
                                             <div className="all-colors-container">
                                                 {
                                                     COLORS.map((color, colorIdx) => (
