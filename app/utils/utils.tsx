@@ -39,82 +39,86 @@ const TEMPLATES = [
     ]
 ]
 
-const TEMPLATE_DETAILS = [[
-    ["🟢 Start", "Ideas to begin implementing", "rgb(3, 169, 244)"],
-    ["🛑 Stop", "Practices to discontinue", "rgb(238, 44, 29)"],
-    ["🚙 Continue", "Actions to maintain", "rgb(255, 152, 0)"]],
-[
-    ["🤗 Glad", "Positive Experiences", "rgb(3, 169, 244)"],
-    ["😞 Sad", "Negative experiences", "rgb(238, 44, 29)"],
-    ["😡 Mad", "Frustrations and challenges", "rgb(255, 152, 0)"]
-],
-[
-    ["💨 Wind", "Forces helping us", "rgb(3, 169, 244)"],
-    ["⚓️ Anchors", "Obstacles holding us back", "rgb(238, 44, 29)"],
-    ["🤺 Actions", "Steps for improvement", "rgb(255, 152, 0)"]
-],
-[
-    ["👍 What Went Well", "Successful elements", "rgb(3, 169, 244)"],
-    ["👎 What Went Wrong", "Aspects that didn't work", "rgb(238, 44, 29)"],
-    ["🛠️ What We Want to Improve", "Areas for development", "rgb(255, 152, 0)"]
-],
-[
-    ["🚦 Start", "New initiatives", "rgb(3, 169, 244)"],
-    ["✋ Stop", "Ineffective practices", "rgb(238, 44, 29)"],
-    ["🚙 Continue", "Effective ongoing actions", "rgb(255, 152, 0)"],
-    ["💪 Change", "Modifications needed", "rgb(0, 147, 6)"]
-],
-[
-    ["👍 Liked", "Enjoyable aspects", "rgb(3, 169, 244)"],
-    ["📚 Learned", "Key learnings", "rgb(238, 44, 29)"],
-    ["👎 Lacked", "Missing elements", "rgb(255, 152, 0)"],
-    ["🧞 Longed For", "Desired improvements", "rgb(0, 147, 6)"]
-],
-[
-    ["➡️ Keep", "Effective current practices", "rgb(3, 169, 244)"],
-    ["➕ Add", "New practices to try", "rgb(238, 44, 29)"],
-    ["⬇️ Less", "Practices to reduce", "rgb(255, 152, 0)"],
-    ["⬆️ More", "Practices to increase", "rgb(0, 147, 6)"]
-],
-[
-    ["⬇️ Drop", "Unproductive practices", "rgb(3, 169, 244)"],
-    ["➕ Add", "New ideas to implement", "rgb(238, 44, 29)"],
-    ["➡️ Keep", "Successful current practices", "rgb(255, 152, 0)"],
-    ["⬆️ Improve", "Areas for enhancement", "rgb(0, 147, 6)"]
-],
-[
-    ["🗞️ Topics", "Potential discussion points", "rgb(3, 169, 244)"],
-    ["🗳️ Votes", "Priority indicators", "rgb(238, 44, 29)"],
-    ["🗣️ Discussion", "Key takeaways", "rgb(255, 152, 0)"]
-],
-[
-    ["⚪️ White Hat", "Facts and information", "rgb(3, 169, 244)"],
-    ["🔴 Red Hat", "Emotions and feelings", "rgb(238, 44, 29)"],
-    ["⚫️ Black Hat", "Critical judgment", "rgb(255, 152, 0)"],
-    ["🟡 Yellow Hat", "Optimism and benefits", "rgb(0, 147, 6)"],
-    ["🟢 Green Hat", "Creativity and new ideas", "rgb(32, 61, 229)"],
-    ["🔵 Blue Hat", "Big picture overview"]
-]
-]
+const TEMPLATE_COLORS = {
+    BLUE: "rgb(3, 169, 244)",
+    RED: "rgb(238, 44, 29)",
+    ORANGE: "rgb(255, 152, 0)",
+    GREEN: "rgb(0, 147, 6)",
+    DARK_BLUE: "rgb(32, 61, 229)",
+};
 
-// const COLUMN_NAMES=[
-//     ["Start", "Stop", "Continue"],
-//     ["Glad", "Sad", "Mad"],
-//     ["Wind", "Anchors", "Actions"],
-//     [""]
-// ]
+
+const TEMPLATE_DETAILS = [
+    [
+        ["🟢 Start", "Ideas to begin implementing", TEMPLATE_COLORS.BLUE],
+        ["🛑 Stop", "Practices to discontinue", TEMPLATE_COLORS.RED],
+        ["🚙 Continue", "Actions to maintain", TEMPLATE_COLORS.ORANGE],
+    ],
+    [
+        ["🤗 Glad", "Positive Experiences", TEMPLATE_COLORS.BLUE],
+        ["😞 Sad", "Negative experiences", TEMPLATE_COLORS.RED],
+        ["😡 Mad", "Frustrations and challenges", TEMPLATE_COLORS.ORANGE],
+    ],
+    [
+        ["💨 Wind", "Forces helping us", TEMPLATE_COLORS.BLUE],
+        ["⚓️ Anchors", "Obstacles holding us back", TEMPLATE_COLORS.RED],
+        ["🤺 Actions", "Steps for improvement", TEMPLATE_COLORS.ORANGE],
+    ],
+    [
+        ["👍 What Went Well", "Successful elements", TEMPLATE_COLORS.BLUE],
+        ["👎 What Went Wrong", "Aspects that didn't work", TEMPLATE_COLORS.RED],
+        ["🛠️ What We Want to Improve", "Areas for development", TEMPLATE_COLORS.ORANGE],
+    ],
+    [
+        ["🚦 Start", "New initiatives", TEMPLATE_COLORS.BLUE],
+        ["✋ Stop", "Ineffective practices", TEMPLATE_COLORS.RED],
+        ["🚙 Continue", "Effective ongoing actions", TEMPLATE_COLORS.ORANGE],
+        ["💪 Change", "Modifications needed", TEMPLATE_COLORS.GREEN],
+    ],
+    [
+        ["👍 Liked", "Enjoyable aspects", TEMPLATE_COLORS.BLUE],
+        ["📚 Learned", "Key learnings", TEMPLATE_COLORS.RED],
+        ["👎 Lacked", "Missing elements", TEMPLATE_COLORS.ORANGE],
+        ["🧞 Longed For", "Desired improvements", TEMPLATE_COLORS.GREEN],
+    ],
+    [
+        ["➡️ Keep", "Effective current practices", TEMPLATE_COLORS.BLUE],
+        ["➕ Add", "New practices to try", TEMPLATE_COLORS.RED],
+        ["⬇️ Less", "Practices to reduce", TEMPLATE_COLORS.ORANGE],
+        ["⬆️ More", "Practices to increase", TEMPLATE_COLORS.GREEN],
+    ],
+    [
+        ["⬇️ Drop", "Unproductive practices", TEMPLATE_COLORS.BLUE],
+        ["➕ Add", "New ideas to implement", TEMPLATE_COLORS.RED],
+        ["➡️ Keep", "Successful current practices", TEMPLATE_COLORS.ORANGE],
+        ["⬆️ Improve", "Areas for enhancement", TEMPLATE_COLORS.GREEN],
+    ],
+    [
+        ["🗞️ Topics", "Potential discussion points", TEMPLATE_COLORS.BLUE],
+        ["🗳️ Votes", "Priority indicators", TEMPLATE_COLORS.RED],
+        ["🗣️ Discussion", "Key takeaways", TEMPLATE_COLORS.ORANGE],
+    ],
+    [
+        ["⚪️ White Hat", "Facts and information", TEMPLATE_COLORS.BLUE],
+        ["🔴 Red Hat", "Emotions and feelings", TEMPLATE_COLORS.RED],
+        ["⚫️ Black Hat", "Critical judgment", TEMPLATE_COLORS.ORANGE],
+        ["🟡 Yellow Hat", "Optimism and benefits", TEMPLATE_COLORS.GREEN],
+        ["🟢 Green Hat", "Creativity and new ideas", TEMPLATE_COLORS.DARK_BLUE],
+        ["🔵 Blue Hat", "Big picture overview", TEMPLATE_COLORS.BLUE],
+    ],
+];
 
 function currentDate() {
-  const formattedDate = new Date().toLocaleDateString("en-US", {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+    const formattedDate = new Date().toLocaleDateString("en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+    });
 
-  return formattedDate;
+    return formattedDate;
 }
 
-const COLORS=["rgb(238, 44, 29)", "rgb(255, 152, 0)", "rgb(255, 193, 7)", "rgb(255, 235, 59)", "rgb(102, 148, 42)", "rgb(0, 147, 6)", "rgb(0, 150, 136)", "rgb(0, 188, 212)", "rgb(3, 169, 244)", "rgb(27, 111, 178)", "rgb(32, 61, 229)", "rgb(92, 70, 232)", "rgb(103, 58, 183)", "rgb(233, 30, 99)", "rgb(0, 0, 0)", "rgb(96, 125, 139)", "rgb(158, 158, 158)", "rgb(121, 85, 72)"];
+const COLORS = ["rgb(238, 44, 29)", "rgb(255, 152, 0)", "rgb(255, 193, 7)", "rgb(255, 235, 59)", "rgb(102, 148, 42)", "rgb(0, 147, 6)", "rgb(0, 150, 136)", "rgb(0, 188, 212)", "rgb(3, 169, 244)", "rgb(27, 111, 178)", "rgb(32, 61, 229)", "rgb(92, 70, 232)", "rgb(103, 58, 183)", "rgb(233, 30, 99)", "rgb(0, 0, 0)", "rgb(96, 125, 139)", "rgb(158, 158, 158)", "rgb(121, 85, 72)"];
 
 export { CATEGORY, TEMPLATES, TEMPLATE_DETAILS, currentDate, COLORS };
