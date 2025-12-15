@@ -92,7 +92,6 @@
     width: 100%;
     padding: 8.5px 14px;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    /* border-left: 8px solid #3DB6B1; */
     border-radius: 8px;
     border-style: solid;
     border-image: initial;
@@ -114,7 +113,6 @@
     height: 30px;
     margin-left: 15px;
     margin-right: 8px;
-    /* color: white; */
 }
 
 .column-delete button {
@@ -129,7 +127,6 @@
     width: 32px;
     height: 32px;
     border-radius: 5px;
-    /* background-color: blue; */
     top: 0;
     left: 0;
     position: absolute;
@@ -141,13 +138,10 @@
     width: 100%;
     padding: 8.5px 14px;
     position: relative;
-    /* border: 8px; */
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-left: 8px solid #3DB6B1;
     border-radius: 8px;
-    /* border-width: 1px; */
     border-style: solid;
-    /* border-color:  */
     border-image: initial;
     box-sizing: content-box;
     background: none;
@@ -155,4 +149,25 @@
     min-width: 0px;
     width: 100%;
     margin-left: 10px;
+}
+
+.all-colors-container {
+    display: grid;
+    grid-template-columns: repeat(4, 32px);
+    /* 4 colors per row */
+    gap: 16px;
+    /* space between colors */
+    width: 100%;
+    padding: 12px;
+    margin-left: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.edit-color {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    cursor: pointer;
 }
