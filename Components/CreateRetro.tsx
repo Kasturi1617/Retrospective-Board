@@ -3,9 +3,25 @@ import { TEMPLATE_DETAILS, currentDate } from "../app/utils/utils";
 import "./CreateRetro.css";
 import Column from "./Column";
 import { useRouter } from "next/navigation";
+import { title } from "process";
 
 
 function CreateRetro(props) {
+
+    async function handleCreateRetro_() {
+        await fetch("/api/retros", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name,
+                columns: items,
+            }),
+        });
+
+        router.push("/retro");
+    }
+
+    const [items, setItems] = useState(TEMPLATE_DETAILS[props.index]);
 
     const [name, setName] = useState(currentDate());
     const [showEdit, setShowEdit] = useState(false);
@@ -24,12 +40,38 @@ function CreateRetro(props) {
         setShowEdit(true);
     }
 
-    function handleSave() {
+    async function handleSave(newItems) {
+        setItems(newItems);
         setShowEdit(false);
+
+        const columns = newItems
+            .filter(item => item[0]?.trim())
+            .map((item, idx) => ({
+                title: item[0].trim(),
+                description: item[1] || "",
+                color: item[2] || "#ccc",
+                order: idx,
+                cards: [],
+            }));
+
+
+        try {
+            await fetch("/api/retros", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name,
+                    templateIndex: props.index,
+                    columns,
+                }),
+            });
+        } catch (err) {
+            console.error("Failed to create retro:", err);
+        }
     }
 
     function handleCreateRetro() {
-        router.push("/daki");
+        router.push("/retro");
     }
 
     return (<>
@@ -47,7 +89,7 @@ function CreateRetro(props) {
                         <input value={name} onChange={handleChange}></input>
                     </fieldset>
                     <p>Retro Template</p>
-                    {TEMPLATE_DETAILS[props.index].map((item, idx) => (
+                    {items.map((item, idx) => (
                         <ul key={idx}>
                             <li>{item[0]}</li>
                             <span>{item[1]}</span>

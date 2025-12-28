@@ -3,8 +3,6 @@ import { TEMPLATE_DETAILS, COLORS } from "../app/utils/utils";
 import { useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import SelectTemplate from "./SelectTemplate";
-import { useRouter } from "next/navigation";
-
 
 function Column(props) {
     const [items, setItems] = useState(TEMPLATE_DETAILS[props.idx]);
@@ -79,7 +77,7 @@ function Column(props) {
 
     function handleSave()
     {
-        props.onSave();
+        props.onSave(items);
     }
 
     return (<>
