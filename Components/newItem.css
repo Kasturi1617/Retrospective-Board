@@ -5,7 +5,7 @@
     transform-origin: center;
     margin-top: 20px;
     overflow-x: hidden;
-    background-color: white;
+    background-color: rgb(33, 33, 33);
 }
 
 .visibility-button {
@@ -66,9 +66,11 @@
 
 .add-button {
     border-radius: 8px;
-    width: 25%;
-    background-color: #AEDEFC;
+    width: 35%;
+    height: 40px;
+    background-color: inherit;
     margin-left: 10px;
+    margin-top: 10px;
 }
 
 .Add {

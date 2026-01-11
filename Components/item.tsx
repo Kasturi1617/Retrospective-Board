@@ -37,7 +37,7 @@ function Item(props) {
                 <p className="text">{props.text}</p>
                 <div className="item-bottom">
 
-                    {drop[props.index].reactions.map(([username, reaction], idx) => {
+                    {drop?.[props.index]?.reactions.map(([username, reaction], idx) => {
                         return <button className="added-emoji">{reaction}</button>
                     })}
                     <img className="add-emoji-icon" src="add-reaction-icon-md.png" onClick={handleEmojiClick} />

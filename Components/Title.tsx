@@ -13,12 +13,11 @@ function Item(props) {
     return (
         <div>
             <div className="title">
-                <img className="image" src={props.imagePath}></img>
-                <h2>{props.title}</h2>
+                <h2 style={{ color: props.color }}>{props.title}</h2>
             </div>
             <div className="body">
                 <span className="column-title">{props.columnTitle}</span>
-                <NewItem title={props.title}/>
+                <NewItem title={props.title} onAddCard={props.onAddCard} color={props.color}/>
             </div>
         </div>
     )
