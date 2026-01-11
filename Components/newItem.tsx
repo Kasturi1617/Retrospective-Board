@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./newItem.css";
 import { useAppStore } from "../Store/useAppStore";
+// import { headers } from "next/headers";
 
 function NewItem(props) {
     const anonymous = "🙈 Anonymous";
@@ -31,48 +32,38 @@ function NewItem(props) {
         showDropDown === true ? setDropDown(false) : setDropDown(true);
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event?.preventDefault();
 
         if (inputValue === "") return;
 
-        if (props.title === "Drop") {
-            const newItem = {
-                text: inputValue,
-                username: "",
-                comments: [],
-                reactions: [],
-            };
-            setDrop([...drop, newItem]);
+        const newCard = {
+            text: inputValue,
+            createdAt: new Date(),
+        };
+
+        try {
+            const response = await fetch(`/api/card`, {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify({
+                    columnTitle: props.title,
+                    card: newCard,
+                }),
+            });
+
+            if (!response.ok) {
+                console.error("Failed to add card");
+                return;
+            }
+
+            setInputValue("");
+            setShowBox(false);
+        } catch (err) {
+            console.error("Error adding card:", err);
         }
-        else if (props.title === "Add") {
-            const newItem = {
-                text: inputValue,
-                username: "",
-                comments: [],
-                reactions: [],
-            };
-            setAdd([...add, newItem]);
-        }
-        else if (props.title === "Keep") {
-            const newItem = {
-                text: inputValue,
-                username: "",
-                comments: [],
-                reactions: [],
-            };
-            setKeep([...keep, newItem]);
-        }
-        else if (props.title === "Improve") {
-            const newItem = {
-                text: inputValue,
-                username: "",
-                comments: [],
-                reactions: [],
-            };
-            setImprove([...improve, newItem]);
-        }
-        setInputValue("");
     }
 
     function handleCancel() {

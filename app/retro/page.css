@@ -1,0 +1,46 @@
+.title-container {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    margin-top: 70px;
+}
+
+.column-title-container {
+    flex: 1;
+    background-color: #EEEEEE;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.drop {
+    display: flex;
+    flex-direction: column;
+}
+
+.add {
+    display: flex;
+    flex-direction: column;
+}
+
+.keep {
+    display: flex;
+    flex-direction: column;
+}
+
+.improve {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-text {
+    margin-left: 10px;
+}
+
+.added-item {
+    margin-bottom: 10px;
+}
