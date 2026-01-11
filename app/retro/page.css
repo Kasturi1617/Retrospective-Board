@@ -1,15 +1,42 @@
+.retro-page-body {
+    .create-body {
+        background-color: rgb(17, 17, 17);
+        width: 100%;
+        min-height: calc(100vh - 80px);
+        /* leave space for header if header is ~80px tall */
+        margin-top: 70px;
+        /* same value as header height */
+        /* position: relative; */
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+}
+
 .title-container {
     display: flex;
     gap: 10px;
     flex-direction: row;
     margin-top: 70px;
+    background-color: rgb(17, 17, 17);
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    /* leave space for header if header is ~80px tall */
+    margin-top: 70px;
+    /* same value as header height */
+    /* position: relative; */
+    position: absolute;
+    width: 100%;
+    left: 0;
+    /* margin-top: ; */
 }
 
 .column-title-container {
     flex: 1;
-    background-color: #EEEEEE;
     border-radius: 8px;
-    margin-right: 10px;
+    margin-left: 20px;
+    background-color: rgb(33, 33, 33);
+    margin-top: 30px;
 }
 
 .body-container {
@@ -20,6 +47,7 @@
 .drop {
     display: flex;
     flex-direction: column;
+    background-color: rgb(33, 33, 33);
 }
 
 .add {

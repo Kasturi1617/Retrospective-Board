@@ -59,8 +59,10 @@ function NewItem(props) {
                 return;
             }
 
+            console.log("Card added successfully");
             setInputValue("");
             setShowBox(false);
+            props.onAddCard();
         } catch (err) {
             console.error("Error adding card:", err);
         }
@@ -76,7 +78,7 @@ function NewItem(props) {
     }
 
     return (<>
-        {!showBox && <button className="add-button" onClick={handleClick}>+ Add item</button>}
+        {!showBox && <button className="add-button" onClick={handleClick} style={{borderLeft: `8px solid ${props.color}`, color: `${props.color}`}}>+ Add item</button>}
         {showBox &&
             <form className={`item-container ${props.title}`} onSubmit={handleSubmit}>
                 <button className="visibility-button" onClick={handleDropDown}>{text}🔻</button>
@@ -87,7 +89,7 @@ function NewItem(props) {
                 }
                 <input placeholder="Enter your thoughts.." className="input-field" value={inputValue} onChange={handleInputChange}></input>
                 <div className="form-bottom">
-                    <button className="submit-button">Add Item</button>
+                    <button className="submit-button" style={{border: `8px solid ${props.color}`}}>Add Item</button>
                     <button className="cancel-button" onClick={handleCancel}>❌</button>
                 </div>
             </form>}

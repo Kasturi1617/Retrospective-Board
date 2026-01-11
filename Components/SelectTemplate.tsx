@@ -1,13 +1,13 @@
 import "./SelectTemplate.css";
 import { useState } from "react";
-import { CATEGORY, TEMPLATES } from "../app/utils/utils";
+import { CATEGORY, TEMPLATES, currentDate } from "../app/utils/utils";
 import CreateRetro from "./CreateRetro";
 
 
 
 function SelectTemplate() {
 
-    const [name, setName] = useState("");
+    const [name, setName] = useState(currentDate());
     const [showOption, setShowOption] = useState(false);
     const [selectedTemplate, setSelectedTemplate] = useState(0);
     const [templateType, setTemplateType] = useState(0);
